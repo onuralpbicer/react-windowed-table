@@ -1,0 +1,14 @@
+{
+    "name": "react-windowed-table",
+    "version": "1.0.0",
+    "description": "A table component virtualized by react-window which allows for a very flexible but easy creation of a table",
+    "main": "build/index.js",
+    "typings": "build/index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "npm run build",
+        "build": "tsc"
+    },
+    "author": "Onur Alp Bicer",
+    "license": "ISC"
+}
