@@ -33,7 +33,7 @@ export interface CellProps<T> {
 
 interface DefaultRowComponentProps<T> extends RowProps<T> {
     columns: Column<T>[]
-    primitizeCell?: (cellData: T[keyof T]) => string | number
+    primitizeCell?: (props: CellProps<T>) => string | number
     rowProps?: React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLDivElement>,
         HTMLDivElement
@@ -102,7 +102,13 @@ function Row<T>(props: DefaultRowComponentProps<T>): JSX.Element {
                 }
 
                 const cellDataToRender: number | string = primitizeCell
-                    ? primitizeCell(cellData)
+                    ? primitizeCell({
+                          dataKey: col.field,
+                          cellData,
+                          rowIndex,
+                          colIndex,
+                          rowData: data,
+                      })
                     : ((cellData as unknown) as number | string)
                 return (
                     <Cell key={itemKey} width={col.width} cellProps={cellProps}>

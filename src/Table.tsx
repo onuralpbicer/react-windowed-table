@@ -8,7 +8,7 @@ export type TableProps<T> = {
     columns: Column<T>[]
     customRowRenderer?: (props: RowProps<T>) => JSX.Element
     customCellRenderer?: (props: CellProps<T>) => JSX.Element
-    primitizeCell?: (cellData: T[keyof T]) => string | number
+    primitizeCell?: (props: CellProps<T>) => string | number
     rowProps?: React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLDivElement>,
         HTMLDivElement
