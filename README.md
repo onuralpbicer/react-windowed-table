@@ -159,9 +159,13 @@ A function that's called on every cell, to turn their type into `string` or `num
 
 Props that will be spread onto the default row's div. It has all the props that a normal div has. For example, you can use the onClick in rowProps to catch click events from a single row.
 
+**NOTE:** This prop does NOT have any effect if customRowRenderer is being used
+
 ### cellProps _(optional)_:
 
 Props that will be spread onto the default cells's div. It has all the props that a normal div has. For example, you can use the onClick in cellProps to catch click events from a single cell.
+
+**NOTE:** This prop does NOT have any effect if customCellRenderer is being used
 
 ### onResize _(optional)_: (size: Size) => void
 
