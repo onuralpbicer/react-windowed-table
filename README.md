@@ -4,19 +4,13 @@ A table component built on [react-window](https://github.com/bvaughn/react-windo
 
 ## Install
 
----
-
 `npm install --save react-windowed-table`
 
 ## TypeScript
 
----
-
 All of the components are built using fully typed interfaces and types with generic types that infer the type of the list from your input. This means you don't have to deal with `any` typed data items in your callbacks, if you choose to use them. You don't have to wrestle with TypeScript to get your typings to work.
 
 ## Usage
-
----
 
 ```typescript
 import { Table } from 'react-windowed-table'
@@ -38,13 +32,14 @@ Only required props are:
 
 And that's it! With only 3 props, you can be up and running with a working virtualized table. See [props](#props) for a list of all props
 
-## Future Additions
+## Change Log
 
----
+-   Removed dependency on Material-UI and clsx (v1.0.2)
+
+## Future Additions
 
 At the moment, the functionality is pretty limited. You do get a neat table with a lot of things abstrated away, but that is all you get. To implement features such as selecting items etc, you will need to use any of the variety of customization props. In the future, I am planning to add support for the following features(order doesn't represent priority).
 
--   Remove dependency on Material-UI(only used for styling at the moment which is very minimal)
 -   Built in header, with the option to turn it off(soon)
 -   Built in sorting
 -   Built in searching
@@ -52,8 +47,6 @@ At the moment, the functionality is pretty limited. You do get a neat table with
 -   Anything you might want to see! Open an issue on my [github](https://github.com/onuralpbicer/react-windowed-table/issues) and ask for any feature you want.
 
 ## Props
-
----
 
 ### rows _(required)_ : T[ ]
 
