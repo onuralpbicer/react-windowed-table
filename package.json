@@ -1,6 +1,6 @@
 {
     "name": "react-windowed-table",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A table component virtualized by react-window which allows for a very flexible but easy creation of a table",
     "main": "build/index.js",
     "typings": "build/index.d.ts",
