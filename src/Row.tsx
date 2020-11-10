@@ -1,21 +1,6 @@
-import { createStyles, makeStyles } from '@material-ui/core'
 import React from 'react'
 import Cell from './Cell'
 import { Column } from './Table'
-import clsx from 'clsx'
-
-const useStyles = makeStyles(() =>
-    createStyles({
-        container: {
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'nowrap',
-            justifyContent: 'space-around',
-            alignItems: 'stretch',
-        },
-    }),
-)
-
 export interface RowProps<T> {
     index: number
     style: React.CSSProperties
@@ -56,22 +41,26 @@ function Row<T>(props: DefaultRowComponentProps<T>): JSX.Element {
         cellProps,
         customCellRenderer,
     } = props
-    const classes = useStyles(props)
 
     let customStyle: React.CSSProperties | undefined
     let restProps = {}
-    let customClassname: string | undefined
     if (rowProps) {
         const { style, className, ...rest } = rowProps
         customStyle = style
         restProps = rest
-        customClassname = className
     }
 
     return (
         <div
-            style={{ ...style, ...customStyle }}
-            className={clsx(classes.container, customClassname)}
+            style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'nowrap',
+                justifyContent: 'space-around',
+                alignItems: 'stretch',
+                ...style,
+                ...customStyle,
+            }}
             {...restProps}
         >
             {columns.map((col, colIndex) => {
